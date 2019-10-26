@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Show all</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="css/table.css">
+
+</head>
+<body>
+
+<table>
+    <thead>
+        <tr>
+            <td>ID1</td>
+            <td>Text1</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="simple: ${simpleText}">
+            <td th:text="${simple.ID}">ID</td>
+            <td th:text="${simple.text}">Text</td>
+        </tr>
+    </tbody>
+
+</table>
+<p><a href="/add">Add next data</a></p>
+
+
+</body>
+</html>
