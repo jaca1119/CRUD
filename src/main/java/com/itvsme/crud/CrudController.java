@@ -22,14 +22,17 @@ public class CrudController
     }
 
 
-
-
-
 //    @PostMapping("/add")
 //    public SimpleText newText(@RequestBody SimpleText text)
 //    {
 //        return repository.save(text);
 //    }
+
+    @GetMapping("/allObjects")
+    public String allObjects()
+    {
+        return "allObjects";
+    }
 
     @GetMapping("/add")
     public String greetingForm(Model model)
@@ -48,6 +51,19 @@ public class CrudController
     @GetMapping("/all")
     public String showAll(Model model) {
         model.addAttribute("simpleText", repository.findAll());
+        model.addAttribute("simpleTextUpdate", new SimpleText());
+        return "/all";
+    }
+
+
+
+    @PostMapping("/all")
+    public String update(@ModelAttribute SimpleText update) {
+        System.out.println(repository.findByID(update.getID()));
+        System.out.println(update.getID());
+        System.out.println(update.getText());
+//        repository.findByID(update.getID()).setText(update.getText());
+
         return "/all";
     }
 

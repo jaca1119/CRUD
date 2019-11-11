@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Form</h1>
-<form action="#" th:action="@{/add}" th:object="${simpleText}" method="post">
+<form action="/add" th:action="@{/add}" th:object="${simpleText}" method="post">
     <p>Message: <input type="text" th:field="*{text}" required/></p>
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
 </form>
