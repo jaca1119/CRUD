@@ -2,23 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>All objects</title>
     <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/flex.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="all.js"></script>
 </head>
 <body>
+<div class="flex-container">
 
-<table id="table">
-    <thead>
-    <tr>
-        <td>ID</td>
-        <td>Text</td>
-    </tr>
-    </thead>
+        <table id="table">
+            <thead>
+            <tr>
+                <td>ID</td>
+                <td>Text</td>
+            </tr>
+            </thead>
+            <tbody id="tb">
 
-</table>
+            </tbody>
+        </table>
+
+        <div>
+            Text:<input id="text" type="text" name="text">
+            <button type="button" class="btn btn-primary" onclick="add()">Add new</button>
+        </div>
+</div>
 
 </body>
 </html>

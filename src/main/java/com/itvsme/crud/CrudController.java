@@ -15,10 +15,10 @@ public class CrudController
     {
         this.repository = repository;
 
-        repository.save(new SimpleText("Test1"));
-        repository.save(new SimpleText("Test2"));
-        repository.save(new SimpleText("Test3"));
-        repository.save(new SimpleText("Test1"));
+        repository.save(new SimpleText("Sample text"));
+        repository.save(new SimpleText("Another one"));
+        repository.save(new SimpleText("Bites"));
+        repository.save(new SimpleText("The Dust"));
     }
 
 
