@@ -2,6 +2,9 @@ $(document).ready(function() {
 updateTable();
 });
 
+$(document).on('click', '.del', deleteID);
+
+
 function updateTable()
 {
     var txt = "";
@@ -15,9 +18,10 @@ function updateTable()
             {
                 let id = data[i].id;
                 let text = data[i].text;
-                console.log(text);
+                console.log(text + " " + id);
                 txt += "<tr><td>" + id + "</td>";
-                txt += "<td>" + text +"</td>"
+                txt += "<td>" + text +"</td>";
+                txt += "<td><button class='del'  id='b" + id +"'>&#10005</button></td";
                 txt += "</tr>";
             }
 
@@ -39,4 +43,24 @@ function add()
     }).then(function(){
         updateTable();
     });
+}
+
+
+function deleteID(event)
+{
+    console.log(this);
+
+    console.log(this.id.substring(1));
+    let id = this.id.substring(1);
+
+    console.log(id);
+
+    $.ajax({
+          type: "DELETE",
+          url: '/api/texts/' + id,
+          contentType: "application/json; charset=utf-8"
+        }).then(function(){
+            updateTable();
+        });
+
 }
