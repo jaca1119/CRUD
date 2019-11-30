@@ -3,6 +3,7 @@ updateTable();
 });
 
 $(document).on('click', '.del', deleteID);
+$(document).on('click', '.update', updateID);
 
 
 function updateTable()
@@ -18,10 +19,10 @@ function updateTable()
             {
                 let id = data[i].id;
                 let text = data[i].text;
-                console.log(text + " " + id);
                 txt += "<tr><td>" + id + "</td>";
                 txt += "<td>" + text +"</td>";
-                txt += "<td><button class='del'  id='b" + id +"'>&#10005</button></td";
+                txt += "<td><button class='update'  id='u" + id +"'>Update</button></td>";
+                txt += "<td><button class='del'  id='b" + id +"'>&#10005</button></td>";
                 txt += "</tr>";
             }
 
@@ -48,12 +49,7 @@ function add()
 
 function deleteID(event)
 {
-    console.log(this);
-
-    console.log(this.id.substring(1));
     let id = this.id.substring(1);
-
-    console.log(id);
 
     $.ajax({
           type: "DELETE",
@@ -62,5 +58,28 @@ function deleteID(event)
         }).then(function(){
             updateTable();
         });
+}
 
+function updateID(event)
+{
+    let id = this.id.substring(1);
+    let text = this.parentNode.parentNode.cells[1].innerText
+
+    let txt = "<p>ID: " + id +"</p>";
+    txt += "<input type='text' value=" + text + ">";
+    txt += "<button onclick=\"closeWindow()\">&#10005</button>";
+
+    document.getElementsByClassName("modal")[0].innerHTML = txt;
+
+    showWindow();
+}
+
+function showWindow()
+{
+    document.getElementsByClassName("overlay")[0].style.display = "block";
+}
+
+function closeWindow()
+{
+    document.getElementsByClassName("overlay")[0].style.display = "none";
 }
