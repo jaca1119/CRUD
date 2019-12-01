@@ -27,3 +27,9 @@ body{
     text-align: center;
     z-index: 11; /* 1px higher than the overlay layer */
 }
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
