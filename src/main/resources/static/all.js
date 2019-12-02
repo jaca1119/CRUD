@@ -12,7 +12,7 @@ function updateTable()
         $.ajax({
             type: "GET",
             contentType: "application/json; charset=utf-8",
-            url: "http://localhost:8080/api/texts"
+            url: "/api/texts"
         }).then(function(data) {
 
             for (let i = 0; i < data.length; i++)
