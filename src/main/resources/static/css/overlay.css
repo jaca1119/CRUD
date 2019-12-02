@@ -22,7 +22,8 @@ body{
     left: 50%;
     margin-top: -100px;
     margin-left: -150px;
-    background-color: #f1c40f;
+    background: rgb(34,194,195);
+    background: linear-gradient(0deg, rgba(34,194,195,1) 0%, rgba(45,253,135,1) 100%);
     border-radius: 5px;
     text-align: center;
     z-index: 11; /* 1px higher than the overlay layer */
