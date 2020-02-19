@@ -1,14 +1,8 @@
-# CrUD
-Create Update Delete. Spring Boot, Web, Thymeleaf, JPA, H2
+# CRUD
+Create, Read, Update, Delete. Spring Boot, Web, Thymeleaf, JPA, H2
 
-Now working: Create
-
-![alt text](img/form.png)
-
+Now working: Create, read, update, delete.
 <hr>
 
-![alt text](img/result.png)
+![Working demo](img/demo.gif)
 
-<hr>
-
-![alt text](img/showAll.png)
